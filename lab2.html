@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<button onclick="checkso()">Bài 1</button>
+<button onclick="hocluc()">Bài 2</button>
+<button onclick="xeploai()">Bài 3</button>
+<button onclick="bai4()">Bài 4</button>
+<button onclick="gptb2()">Bài 5</button>
+
+
+<script>
+function checkso() {
+    var x = prompt(" Mời bạn nhập một ký tự");
+
+    if (isNaN(x)== true){
+        alert("Đây là chữ",x);
+
+    }else {
+        alert("Đây là số",x);
+
+    }
+}
+function hocluc() {
+
+    var hoten = prompt("Nhập tên của bạn:");
+    var diem = prompt("Nhập điểm của bạn:");
+    document.writeln("Họ tên:", hoten.toUpperCase(),"</br>");
+    document.writeln("Điểm TB:", diem ,"</br>");
+
+    if (diem <5){
+        document.write("Yếu");
+    }else if (diem >= 5 && diem <= 6){
+        document.write("Điểm TB");
+    }else if (diem >= 7 && diem <= 10){
+        document.write("Điểm cao");
+    }else {
+        document.write("Chép ai mà điểm cao thế");
+    }
+
+
+}
+
+function xeploai() {
+
+    var hoten = prompt("Nhập tên của bạn:");
+    var xl = prompt("Nhập xếp loại:");
+    document.writeln("Họ tên:", hoten.toUpperCase(),"</br>");
+
+    if (xl =="A"){
+        document.write("Good job");
+    }else if (xl =="B"){
+        document.write("Pretty good");
+    }else if (xl =="C") {
+        document.write("Passed");
+    }else if (xl =="D") {
+        document.write("Not so good ");
+    }else if (xl =="F"){
+        document.write("Failed");
+    }else {
+        document.write("Không xác định");
+    }
+
+
+}
+function bai4() {
+    var a = 4;
+    var b = 4;
+
+
+    var phepnhan = a*b;
+    var phepcong = a+b;
+    var pheptru = a-b;
+    var phepchia = a/b;
+
+    document.writeln("a =",a ,'</br>');
+    document.writeln("b =",b,'</br>');
+
+    document.writeln("phep nhan:",phepnhan,'</br>');
+    document.writeln("phep cong:",phepcong,'</br>');
+    document.writeln("phep tru:",pheptru,'</br>');
+    document.writeln("phep chia:",phepchia);
+
+}
+function gptb2() {
+    
+    var a = prompt(" nhập hệ số a ");
+    var b = prompt("nhập hệ số b ");
+    var c = prompt("nhập hệ số c");
+
+    delta = b*b-4*a*c;
+
+    if (delta<0){
+        alert("phương trình vô nghiệm");
+    }else if (delta==0){
+        alert("phương trình có nghiệm kép x=",-b/2*a);
+    }else {
+        var x1 = (-b+Math.sqrt(delta)/2*a);
+        var x2 = (-b-Math.sqrt(delta)/2*a);
+        alert("phương trình có 2 nghiệm x1="+x1 + " x2="+x2);
+    }
+
+
+}
+</script>
+
+
+</body>
+</html>
