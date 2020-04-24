@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab5</title>
+</head>
+<style>
+    .conten {
+        margin-left: 400px;
+        width: 500px;
+        height: 500px;
+        background: wheat;
+        padding: 20px;
+
+    }
+
+    form input {
+        margin-bottom: 10px;
+
+
+    }
+
+    select {
+        margin-left: 35px;
+        margin-bottom: 10px;
+        width: 190px;
+    }
+
+    #unit-price {
+        margin-left: 12px;
+        width: 187px;
+
+    }
+
+    #product {
+        width: 187px;
+
+    }
+    h5{
+        display: none;
+    }
+    p{
+        color: blue;
+        font-weight: bold;
+    }
+    span{
+        color: black;
+    }
+    button{
+        margin-top: 10px;
+    }
+</style>
+<body>
+<script>
+    function validate() {
+
+        var product = document.getElementById("product").value;
+        document.getElementById("sp").innerHTML = product;
+
+        var loai = document.getElementById("Product-type").value;
+        document.getElementById("loai").innerHTML = loai;
+
+        var dongia = document.getElementById("unit-price").value;
+        document.getElementById("dongia").innerHTML = dongia;
+
+        var pvc = document.getElementById("phivc").innerHTML;
+        document.getElementById("pvc").innerHTML = pvc;
+
+        var noinhan = document.getElementById("d-chi").innerHTML;
+        document.getElementById("noinhan").innerHTML = noinhan;
+
+
+        if(product==""){
+            alert("Sản phẩm không được để trống");
+            return false;
+        }else if(loai==""){
+            alert("Loại giá không đc để trống");
+            return false;
+        }else if(dongia==""){
+            alert("Đơn giá không được để trống");
+            return false;
+        }else if(dongia<0){
+            alert("Đơn giá không đc để âm");
+            return false;
+        }else if(noinhan==""){
+            alert("Nơi nhận không được để trống");
+            return false;
+        }else {
+            return true;
+        }
+
+
+
+
+
+    }
+    function check1() {
+        var nth = document.getElementById("noi-thanh").value;
+        document.getElementById("d-chi").innerHTML = nth;
+    }
+    function check2() {
+        var ngth = document.getElementById("ngoai-thanh").value;
+        document.getElementById("d-chi").innerHTML = ngth;
+        var phivanchuyen = 1000;
+        document.getElementById("phivc").innerHTML = phivanchuyen;
+
+
+    }
+</script>
+<div class="conten">
+    <h1>Đặt hàng</h1>
+    <form action="#" name="myForm" onsubmit="return(validate());">
+        <div>
+            <label>Sản phẩm</label>
+            <input type="text" id="product">
+        </div>
+        <div>
+            <label>Loại</label>
+            <select id="Product-type">
+                <option></option>
+                <option>Dưới 100k</option>
+                <option>Trên 100k</option>
+                <option>Dưới 200k</option>
+                <option>Trên 500k</option>
+            </select>
+        </div>
+        <div>
+            <label>Đơn giá</label>
+            <input type="text" id="unit-price">
+        </div>
+        <div>
+            <label>Nơi nhận hàng</label>
+            <input type="checkbox" onclick="check1()"  id="noi-thanh" value="Nội thành"><span>Nội thành</span>
+            <input type="checkbox" onclick="check2()"  id="ngoai-thanh" value="Ngoại thành"><span>Ngoại thành</span>
+            <h5 id="d-chi"></h5>
+        </div>
+        <div>
+            <label>Phí vận chuyển:</label>
+            <span id="phivc"></span>
+        </div>
+        <hr>
+        <button type="submit">Mua hàng</button>
+    </form>
+    <div id="giohang">
+        <p>Sản phẩm:<span id="sp"></span></p>
+        <p>Loại:<span id="loai"></span></p>
+        <p>Đơn giá:<span id="dongia"></span></p>
+        <p>Nơi nhận:<span id="noinhan"></p>
+        <p>Phí vận chuyển:<span id="pvc"></span></p>
+    </div>
+</div>
+</body>
+</html>
