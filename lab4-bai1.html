@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4</title>
+    <style>
+        .dom{
+            width: 100%;
+            height: 200px;
+        }
+
+        p{
+            background: blue;
+            width:200px ;
+            height:40px ;
+            color:black ;
+            font-size:14px ;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dom">
+        <p id="info"> Bài thực hành Dom</p>
+        <button  onclick="background()" >background</button>
+        <button onclick="width()"> width</button>
+        <button onclick="height()"> height</button>
+        <button onclick="color()">color</button>
+        <button onclick="fontsize()">font size</button>
+    </div>
+<script>
+    function background() {
+        var bien1 = document.getElementById("info");
+        bien1.style.backgroundColor = "gray";
+
+    }
+    function width() {
+        var bien2 = document.getElementById("info");
+        bien2.style.width = "400px";
+
+    }
+    function height() {
+        var bien3 = document.getElementById("info");
+        bien3.style.height = "60px";
+
+    }
+    function color() {
+        var bien4 = document.getElementById("info");
+        bien4.style.color = "red";
+
+    }
+    function fontsize() {
+        var bien5 = document.getElementById("info");
+        bien5.style.fontSize = "20px";
+
+    }
+
+
+</script>
+</body>
+</html>
