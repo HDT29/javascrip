@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab3</title>
+</head>
+<body>
+<button onclick="bai2()">bài 2</button>
+<script>
+    function bai2() {
+
+// Lấy giá trị từ người dùng
+       var a = prompt("Nhập vào số ");
+
+// Chuyển sang kiểu number
+        a = parseInt(a);
+
+// Kiểm tra số chẵn và lẻ âm dưng
+        if (a % 2 == 0 && a>0){
+            document.write(a+ " Là số chẵn");
+        }
+        else{
+           return false;
+        }
+       }
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="bai1()">bài 1</button>
+<script>
+    function bai1() {
+
+        var n = prompt("Mời bạn nhập số ");
+        // for (var n; n > 0; n--) {
+        //     document.write(n + " là số dương", "</br>");
+        //     if (n < 0) {
+        //         break;
+        //     }
+        //
+        // }
+        if ( n >0){
+            document.write(n + " là số dương", "</br>");
+            return false;
+        }else if (n==0) {
+            document.write(n + " là số 0", "</br>");
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

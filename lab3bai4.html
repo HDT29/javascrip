@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab3bai4</title>
+</head>
+<style>
+    input{
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-top: 10px;
+    }
+    #error{
+        color: red;
+    }
+    #error1{
+        color: red;
+    }
+</style>
+<body>
+
+<div>
+    <span>Tiền điện</span><input type="text" id="tdien" onkeyup="bai4()"/><br>
+    <p id="error"></p>
+    <span>Tiền mạng</span><input type="text"id="tmang"onkeyup="bai4()"/><br>
+    <p id="error1"></p>
+    <span>Tiền nước</span><input type="text"id="tnuoc"onkeyup="bai4()"/><br>
+    <p id="tinh1" value="0">Tiền nhà 1 tháng:<span id="tn1thang"></span></p>
+    <p id="tinh2"value="0"> Tiền nhà 1 năm:<span id="tn1nam"></span></p>
+    <p id="tinh3"value="0">Tiền nhà 5 năm:<span id="tn5nam"></span></p>
+
+
+</div>
+<div><button onclick="tinhtien()">Tính</button></div>
+<script>
+  function bai4() {
+      var tienmang = document.getElementById("tmang").value;
+      var tiendien = document.getElementById("tdien").value;
+      var tiennuoc = document.getElementById("tnuoc").value;
+
+      if (tiennuoc >250|| tiendien >2000){
+          document.getElementById("error").innerHTML ="Chuyển nhà";
+          return false;
+      }
+      else if (tienmang>500){
+          document.getElementById("error1").innerHTML ="Cắt hợp đồng mạng";
+          return false;
+      }else {
+          return true;
+      }
+
+  }
+
+ function tinhtien() {
+     var tienmang = document.getElementById("tmang").value;
+     tienmang = Number(tienmang);
+     var tiendien =document.getElementById("tdien").value;
+     tiendien = Number(tiendien);
+     var tiennuoc = document.getElementById("tnuoc").value;
+     tiennuoc = Number(tiennuoc);
+
+     var tn1thang = tiendien + tienmang + tiennuoc;
+     var tn1nam =11*tn1thang ;
+     var tn5nam = 5*tn1nam;
+
+
+     document.getElementById("tn1thang").innerHTML =tn1thang;
+     document.getElementById("tn1nam").innerHTML =tn1nam;
+     document.getElementById("tn5nam").innerHTML =tn5nam;
+
+
+
+ }
+
+</script>
+</body>
+</html>
